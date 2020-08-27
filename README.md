@@ -1,5 +1,7 @@
 Simple package to generate yaml from Map.
 
+[![Pub Package](https://img.shields.io/pub/v/to_yaml.svg)](https://pub.dev/packages/to_yaml/changelog)
+
 Example:
 ```dart
 import 'package:to_yaml/to_yaml.dart';

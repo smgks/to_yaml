@@ -1,1 +1,2 @@
-- 0.0.1 Init
+- 0.0.1 Init.
+- 0.0.2 Edit environment version, description in pubspec.yaml. Edit README.md.
