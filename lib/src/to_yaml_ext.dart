@@ -11,6 +11,10 @@ extension ListToYaml on List{
         res += padding + MapToYaml._toYaml(i,level+1,true);
       }
       if (i is List){
+        if (i.isEmpty){
+          res += '$padding[]\n';
+          continue;
+        }
         res += padding + '\n';
         res += _toYaml(i,level+1);
       }
@@ -36,6 +40,10 @@ extension MapToYaml on Map{
         res += '\n' + _toYaml(element[i], level+1);
       }
       if (element[i] is List){
+        if ((element[i] as List).isEmpty){
+          res += ' []\n';
+          continue;
+        }
         res += '\n' + ListToYaml._toYaml(element[i], level);
       }
       if (!(element[i] is List) && !(element[i] is Map)){

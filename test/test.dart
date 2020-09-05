@@ -33,4 +33,24 @@ void main() {
     print(test2);
     expect(test2.toString(), equals(test2Result.toString()));
   });
+
+  test('case3', () {
+    var test2 = {'aaa':'qqq','caa':{'bbb':{'ttt':'ttt','yyy':'yyy','array':['zxc',{'zzz':'zzz','mmm':'mmm'},[]]}}};
+    var test2Temp = test2.toYaml();
+    print(test2Temp);
+    var test2Result = loadYaml(test2Temp);
+    print(test2Result);
+    print(test2);
+    expect(test2.toString(), equals(test2Result.toString()));
+  });
+
+  test('case4', () {
+    var test2 = {'aaa':'qqq','caa':{'bbb':{'ttt':'ttt','yyy':'yyy','array':[]}}};
+    var test2Temp = test2.toYaml();
+    print(test2Temp);
+    var test2Result = loadYaml(test2Temp);
+    print(test2Result);
+    print(test2);
+    expect(test2.toString(), equals(test2Result.toString()));
+  });
 }
