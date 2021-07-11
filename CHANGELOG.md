@@ -1,3 +1,4 @@
 - 0.0.1 Init.
 - 0.0.2 Edit environment version, description in pubspec.yaml. Edit README.md.
 - 0.0.3 Fix empty array.
+- 0.0.4 Fix multiline string.

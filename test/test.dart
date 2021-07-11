@@ -53,4 +53,24 @@ void main() {
     print(test2);
     expect(test2.toString(), equals(test2Result.toString()));
   });
+
+  test('case5 multiline text', () {
+    var test2 = {'aaa':'q\nq\nq\t\tadasdasdasdasdsd asdasdas\nend','caa':{'bbb':{'ttt':'ttt','yyy':'yyy','array':['z\nxc','qw\ne']}}};
+    var test2Temp = test2.toYaml();
+    print(test2Temp);
+    var test2Result = loadYaml(test2Temp);
+    print(test2Result);
+    print(test2);
+    expect(test2.toString(), equals(test2Result.toString()));
+  });
+
+  test('case6 multiline text list', () {
+    var test2 = ['aaa','qqq','c\naasdasd\'"\tasdasda\naaa\n\tabc: qwe\naabc: qwe\n|-\nqwe',{'bbb':{'ttt':'ttt','yyy':'yyy','array':['z\nxc','qw\ne']}}];
+    var test2Temp = test2.toYaml();
+    print(test2Temp);
+    var test2Result = loadYaml(test2Temp);
+    print(test2Result);
+    print(test2);
+    expect(test2.toString(), equals(test2Result.toString()));
+  });
 }

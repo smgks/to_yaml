@@ -19,7 +19,16 @@ extension ListToYaml on List{
         res += _toYaml(i,level+1);
       }
       if (!(i is List) && !(i is Map)) {
-        res += padding + '$i' + '\n';
+        if (i is String) {
+          res += '$padding|-\n';
+          var space = '  '* (level + 1);
+          res += space;
+          var str = i.replaceAll('\n', '\n$space');
+          res += str;
+        } else {
+          res += padding + '$i';
+        }
+        res +='\n';
       }
     }
     return res;
@@ -47,7 +56,15 @@ extension MapToYaml on Map{
         res += '\n' + ListToYaml._toYaml(element[i], level);
       }
       if (!(element[i] is List) && !(element[i] is Map)){
-        res += ' ${element[i]}';
+        if (element[i] is String) {
+          res += ' |-\n';
+          var space = '  '* (level + 1);
+          res += space;
+          var str = (element[i] as String).replaceAll('\n', '\n$space');
+          res += str;
+        } else {
+          res += ' ${element[i]}';
+        }
         res += '\n';
       }
     }
