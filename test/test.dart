@@ -73,4 +73,14 @@ void main() {
     print(test2);
     expect(test2.toString(), equals(test2Result.toString()));
   });
+
+  test('case6 null', () {
+    var test2 = [null,null,{'asd':null,'qwe':'aaa\nnnn'}];
+    var test2Temp = test2.toYaml();
+    print(test2Temp);
+    var test2Result = loadYaml(test2Temp);
+    print(test2Result);
+    print(test2);
+    expect(test2.toString(), equals(test2Result.toString()));
+  });
 }
